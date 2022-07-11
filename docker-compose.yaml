@@ -1,0 +1,31 @@
+version: "3.7"
+
+networks:
+  state_manager_network: {}
+
+services:
+
+  state_manager:
+    image: state_manager:0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - IN_MEMORY_DATABASE_HOST=state_manager_redis
+      - IN_MEMORY_DATABASE_PORT=6379
+      - IN_MEMORY_DATABASE=0
+    networks:
+      - state_manager_network
+    depends_on:
+      - state_manager_redis
+    restart: always
+
+  state_manager_redis:
+    image: redis:6.2
+    # ports:
+    #   - "6379:6379"
+    networks:
+      - state_manager_network
+    restart: always

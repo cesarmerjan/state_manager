@@ -1,0 +1,9 @@
+.venv/
+**/__pycache
+.env
+Dockerfile
+.git
+notes.txt
+test.py
+old/
+todo

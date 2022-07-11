@@ -1,0 +1,17 @@
+fakeredis
+redis
+hiredis
+web-encoder
+string-signer
+stack-frame-analyzer
+python-dotenv
+uvicorn
+fastapi
+pytest
+coverage
+autopep8
+flake8
+black
+isort
+requests
+pyOpenSSL
